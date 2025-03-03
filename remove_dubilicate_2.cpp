@@ -1,33 +1,31 @@
 
-#include<bits/stdc++.h>
-
+#include<iostream>
 using namespace std;
-int removeDuplicates(int arr[], int n)
-{
-  int i = 0;
-  for (int j = 1; j < n; j++)
-  {
-    if (arr[i] != arr[j])
-    {
-      arr[i+1] = arr[j];
-      i++;
-    }
-  }
-  return i;
-}
 int main() {
   int n;
   cout<<"Enter the size:";
   cin>>n;
-  int arr[n] ,i;
+  int arr[n] ,i=0,j,c=0;
   cout<<"Enter array elements:";
   for(i=0;i<n;i++)
   {
         cin>>arr[i];
   }
-  int k = removeDuplicates(arr, n);
-  cout << "The array after removing duplicate elements is " << endl;
-  for (int i = 0; i < k; i++) {
-    cout << arr[i] << " ";
+  i=0;
+  for(j=1;j<n;j++)
+  {
+      if(arr[i]!=arr[j])
+      {
+          i++;
+          arr[i]=arr[j];
+      }
+      c=i+1;
   }
+  cout<<"Array after removing dubilicants is:";
+   for(j=0;j<c;j++)
+   {
+        cout<<arr[j]<<endl;
+   }
+   return 0;
+
 }
